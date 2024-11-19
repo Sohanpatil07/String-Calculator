@@ -1,12 +1,27 @@
 package com.string_calculator.string.calculator;
 
+import java.util.Arrays;
+import java.util.regex.Pattern;
+
 public class StringCalculator {
     public int add(String numbers) {
             if (numbers.isEmpty()) {
                 return 0;
             }
+            // for new lines
         String[] numArray = numbers.split(",|\n");
-            return 0;
+
+            // for custom delimiter
+        if (numbers.startsWith("//")) {
+            String[] parts = numbers.split("\n", 2);
+            String delimiter = parts[0].substring(2);
+            numbers = parts[1];
+            return Arrays.stream(numbers.split(Pattern.quote(delimiter)))
+                    .mapToInt(Integer::parseInt)
+                    .sum();
+        }
+
+        return 0;
         }
 
     public int multipleNumbers(String numbers) {
