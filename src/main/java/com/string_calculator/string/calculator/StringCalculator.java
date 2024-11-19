@@ -1,6 +1,7 @@
 package com.string_calculator.string.calculator;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
@@ -21,6 +22,15 @@ public class StringCalculator {
                     .sum();
         }
 
+           // handeled negative numbers
+        String[] numArray1 = numbers.split(",|\n");
+        List<Integer> negatives = Arrays.stream(numArray)
+                .map(Integer::parseInt)
+                .filter(n -> n < 0)
+                .toList();
+        if (!negatives.isEmpty()) {
+            throw new IllegalArgumentException("Negative numbers not allowed: " + negatives);
+        }
         return 0;
         }
 
