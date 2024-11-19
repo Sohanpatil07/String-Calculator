@@ -27,5 +27,18 @@ class StringCalculatorApplicationTests {
 		assertEquals(6, calculator.multipleNumbers("1,5"));
 	}
 
+	@Test
+	void testAddMultipleNumbers() {
+		StringCalculator calculator = new StringCalculator();
+		assertEquals(10, calculator.add("1,2,3,4"));
+	}
+	@Test
+	void testAddWithNewLines() {
+		StringCalculator calculator = new StringCalculator();
+		assertEquals(6, calculator.add("1\n2,3"));
+	}
+
+
+
 
 }

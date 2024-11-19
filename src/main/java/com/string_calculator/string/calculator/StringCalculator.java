@@ -5,6 +5,7 @@ public class StringCalculator {
             if (numbers.isEmpty()) {
                 return 0;
             }
+        String[] numArray = numbers.split(",|\n");
             return 0;
         }
 
@@ -17,6 +18,8 @@ public class StringCalculator {
         }
         return sum;
     }
+
+
 
 }
 
