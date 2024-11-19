@@ -18,13 +18,13 @@ class StringCalculatorApplicationTests {
 	@Test
 	void testAddSingleNumber() {
 		StringCalculator calculator = new StringCalculator();
-		assertEquals(1, calculator.add("1"));
+		assertEquals(1, calculator.multipleNumbers("1"));
 	}
 
 	@Test
 	void testAddTwoNumbers() {
 		StringCalculator calculator = new StringCalculator();
-		assertEquals(6, calculator.add("1,5"));
+		assertEquals(6, calculator.multipleNumbers("1,5"));
 	}
 
 
